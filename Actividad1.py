@@ -8,6 +8,7 @@ def line(start, end):
     down()
     goto(end.x, end.y)
 
+
 def square(start, end):
     "Draw square from start to end."
     up()
@@ -18,41 +19,29 @@ def square(start, end):
     for count in range(4):
         forward(end.x - start.x)
         left(90)
-
     end_fill()
 
 def circle(start, end):
     "Draw circle from start to end."
-    up()
-    goto((start.x + end.x)/2, start.y)
-    down()
-    begin_fill()
-    for i in range(36):
-        forward((end.x - start.x)/10)
-        left(10)
-    end_fill()
-    
     pass  # TODO
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
+    begin_fill()
+    forward(150)
+    pass  # TODO
+
+def triangle(start, end):
+    "Draw triangle from start to end."
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
 
-    for count in range(4):
-        if (count%2 == 0):
-            forward((end.x - start.x))
-        else:
-            forward((end.x - start.x)/2)
-        left(90)
-
-    end_fill()
-    pass  # TODO
-
-def triangle(start, end):
-    "Draw triangle from start to end."
+    for count in range(3):
+        forward(end.x - start.x)
+        left(120)
+    end_fill()    
     pass  # TODO
 
 def tap(x, y):
@@ -81,6 +70,7 @@ onkey(lambda: color('white'), 'W')
 onkey(lambda: color('green'), 'G')
 onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
+onkey(lambda: color('teal'), 'E')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
 onkey(lambda: store('shape', circle), 'c')
