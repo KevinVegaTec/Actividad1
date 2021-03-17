@@ -24,12 +24,14 @@ def square(start, end):
 def circle(start, end):
     "Draw circle from start to end."
     up()
-    goto(start.x, start.y)
+    goto((start.x + end.x)/2, start.y)
     down()
     begin_fill()
-    for i in range():
+    for i in range(36):
         forward((end.x - start.x)/10)
-        left((end.x - start.x)/10)
+        left(10)
+    end_fill()
+    
     pass  # TODO
 
 def rectangle(start, end):
